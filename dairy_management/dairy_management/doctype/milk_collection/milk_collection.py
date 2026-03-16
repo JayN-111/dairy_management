@@ -4,16 +4,20 @@
 import frappe
 from frappe.model.document import Document
 
-<<<<<<< HEAD
+class MilkCollection(Document):
+	# pass
 
-class MilkCollection(Document):
-	pass
-=======
-class MilkCollection(Document):
-	pass
+	def validate(self):
+    existing = frappe.db.exists('Milk Collection', {
+        'member': self.member,
+        'date': self.date,
+        'shift': self.shift,
+        'name': ('!=', self.name)
+    })
+    if existing:
+        frappe.throw(f"Collection already exists for {self.member} on {self.date} - {self.shift}")
 
 
 
 
 			
->>>>>>> feature/member-management
