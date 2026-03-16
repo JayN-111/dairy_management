@@ -6,7 +6,6 @@ from frappe.model.document import Document
 
 
 class RateMaster(Document):
-	# pass
 	def validate(self):
 		self.validate_fat_range()
 
