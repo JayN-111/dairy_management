@@ -1,13 +1,6 @@
 // Copyright (c) 2026, jaynasit111@gmail.com and contributors
 // For license information, please see license.txt
 
-<<<<<<< HEAD
-frappe.ui.form.on("Milk Collection", {
-	refresh(frm) {
-
-	},
-});
-=======
 
 
 frappe.ui.form.on("Milk Collection", {
@@ -31,4 +24,3 @@ function calc(frm) {
         frm.refresh_field('total_price');
     }
 }
->>>>>>> feature/member-management
