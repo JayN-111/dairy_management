@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:member_id",
+ "creation": "2026-03-13 12:38:43.122452",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member_id",
+  "member_name",
+  "mobile",
+  "village",
+  "column_break_htxw",
+  "join_date",
+  "address",
+  "email"
+ ],
+ "fields": [
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Phone",
+   "label": "Mobile",
+   "placeholder": "select country code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "join_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Join Date"
+  },
+  {
+   "fieldname": "column_break_htxw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_id",
+   "fieldtype": "Data",
+   "label": "Member ID",
+   "placeholder": "MEM-###",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "village",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-14 10:44:23.512334",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Member Management",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "member_name",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

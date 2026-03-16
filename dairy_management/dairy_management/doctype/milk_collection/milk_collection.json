@@ -1,16 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
+<<<<<<< HEAD
+=======
+ "autoname": "field:member",
+>>>>>>> feature/member-management
  "creation": "2026-03-13 14:37:45.138342",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+<<<<<<< HEAD
   "section_break_htig",
   "member",
   "date",
   "shift",
   "column_break_jhus",
   "milk_type",
+=======
+  "member",
+  "name1",
+  "date",
+  "shift",
+  "milk_type",
+  "column_break_jhus",
+>>>>>>> feature/member-management
   "quantity",
   "fat",
   "rate",
@@ -18,6 +31,7 @@
  ],
  "fields": [
   {
+<<<<<<< HEAD
    "fieldname": "section_break_htig",
    "fieldtype": "Section Break"
   },
@@ -26,33 +40,76 @@
    "fieldtype": "Link",
    "label": "Member",
    "options": "Member Management"
+=======
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member",
+   "options": "Member Management",
+   "reqd": 1,
+   "unique": 1
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "date",
    "fieldtype": "Date",
+<<<<<<< HEAD
    "label": "Date"
+=======
+   "label": "Date",
+   "reqd": 1
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "shift",
    "fieldtype": "Select",
+<<<<<<< HEAD
    "label": "Shift",
    "options": "\nMorning\nEvening"
+=======
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Shift",
+   "options": "\nMorning\nEvening",
+   "reqd": 1
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "milk_type",
    "fieldtype": "Select",
+<<<<<<< HEAD
    "label": "Milk Type",
    "options": "\nCow\nBuffalo"
+=======
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Milk Type",
+   "options": "\nCow\nBuffalo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_jhus",
+   "fieldtype": "Column Break"
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Float",
+<<<<<<< HEAD
    "label": "Quantity"
+=======
+   "label": "Quantity(.Ltr)",
+   "precision": "2"
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "fat",
    "fieldtype": "Float",
+<<<<<<< HEAD
    "label": "Fat"
+=======
+   "label": "Fat%",
+   "precision": "2"
+>>>>>>> feature/member-management
   },
   {
    "fieldname": "rate",
@@ -61,21 +118,41 @@
   },
   {
    "fieldname": "total_price",
+<<<<<<< HEAD
    "fieldtype": "Read Only",
    "label": "Total Price"
   },
   {
    "fieldname": "column_break_jhus",
    "fieldtype": "Column Break"
+=======
+   "fieldtype": "Currency",
+   "label": "Total Price"
+  },
+  {
+   "fetch_from": "member.member_name",
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name"
+>>>>>>> feature/member-management
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2026-03-13 15:08:54.376073",
  "modified_by": "Administrator",
  "module": "Dairy Management",
  "name": "Milk Collection",
+=======
+ "modified": "2026-03-14 10:25:30.846866",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Milk Collection",
+ "naming_rule": "By fieldname",
+>>>>>>> feature/member-management
  "owner": "Administrator",
  "permissions": [
   {

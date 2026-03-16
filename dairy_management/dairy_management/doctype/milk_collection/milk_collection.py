@@ -4,6 +4,16 @@
 import frappe
 from frappe.model.document import Document
 
+<<<<<<< HEAD
 
 class MilkCollection(Document):
 	pass
+=======
+class MilkCollection(Document):
+	pass
+
+
+
+
+			
+>>>>>>> feature/member-management
