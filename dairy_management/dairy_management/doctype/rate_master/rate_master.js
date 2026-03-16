@@ -6,66 +6,63 @@ frappe.ui.form.on("Rate Master", {
 		if (!frm.is_new()) {
 			frm.add_custom_button(__('Update Rate'), () => {
 
-				// Fetch the current saved rate from DB (previous rate)
+				// Fetch current saved rate from DB as "previous rate"
 				frappe.db.get_value('Rate Master', frm.doc.name, 'rate')
 					.then(r => {
 						let previous_rate = r.message.rate;
-						let current_rate  = frm.doc.rate;
 
-						// Show confirmation dialog with old vs new rate
 						let dialog = new frappe.ui.Dialog({
-							title: __('Confirm Rate Update'),
+							title: __('Update Rate'),
 							fields: [
 								{
 									fieldtype: 'HTML',
 									options: `
-										<div style="padding: 10px 0">
-											<table style="width:100%; border-collapse:collapse; font-size:14px;">
-												<tr style="background:#f5f5f5;">
-													<th style="padding:10px; border:1px solid #d1d8dd; text-align:left;">Milk Type</th>
-													<th style="padding:10px; border:1px solid #d1d8dd; text-align:left;">Fat Range</th>
-													<th style="padding:10px; border:1px solid #d1d8dd; text-align:left;">Previous Rate</th>
-													<th style="padding:10px; border:1px solid #d1d8dd; text-align:left;">New Rate</th>
-												</tr>
-												<tr>
-													<td style="padding:10px; border:1px solid #d1d8dd;">
-														<b>${frm.doc.milk_type}</b>
-													</td>
-													<td style="padding:10px; border:1px solid #d1d8dd;">
-														${frm.doc.fat_from} – ${frm.doc.fat_to}
-													</td>
-													<td style="padding:10px; border:1px solid #d1d8dd; color:#e74c3c;">
-														<b>₹ ${previous_rate}</b>
-													</td>
-													<td style="padding:10px; border:1px solid #d1d8dd; color:#27ae60;">
-														<b>₹ ${current_rate}</b>
-													</td>
-												</tr>
-											</table>
-											<p style="margin-top:12px; color:#8D99A6; font-size:12px;">
-												⚠️ New Milk Collection entries will automatically 
-												use the updated rate. Existing records are unchanged.
-											</p>
+										<div style="margin-bottom:15px; padding:10px; 
+										background:#f5f5f5; border-radius:6px; font-size:13px;">
+											<b>Milk Type:</b> ${frm.doc.milk_type} &nbsp;|&nbsp;
+											<b>Fat Range:</b> ${frm.doc.fat_from} – ${frm.doc.fat_to}
 										</div>
 									`
+								},
+								{
+									fieldtype: 'Currency',
+									fieldname: 'previous_rate',
+									label: 'Previous Rate (₹)',
+									default: previous_rate,
+									read_only: 1   // just for display
+								},
+								{
+									fieldtype: 'Currency',
+									fieldname: 'new_rate',
+									label: 'New Rate (₹)',
+									reqd: 1,
+									default: previous_rate  // prefilled, user can edit
 								}
 							],
 							primary_action_label: __('Confirm & Save'),
-							primary_action() {
-								frm.save()
-									.then(() => {
-										dialog.hide();
-										frappe.show_alert({
-											message: `Rate updated to ₹${current_rate} for 
-											          ${frm.doc.milk_type} 
-											          (Fat ${frm.doc.fat_from}–${frm.doc.fat_to})`,
-											indicator: 'green'
-										}, 5);
+							primary_action(values) {
+
+								if (values.new_rate === previous_rate) {
+									frappe.msgprint({
+										message: 'New rate is the same as the previous rate. No changes made.',
+										indicator: 'orange'
 									});
-							},
-							secondary_action_label: __('Cancel'),
-							secondary_action() {
-								dialog.hide();
+									return;
+								}
+
+								// Set new rate on the form and save
+								frm.set_value('rate', values.new_rate);
+
+								frm.save().then(() => {
+									dialog.hide();
+									frappe.show_alert({
+										message: `Rate updated from ₹${previous_rate} 
+										          to ₹${values.new_rate} for 
+										          ${frm.doc.milk_type} 
+										          (Fat ${frm.doc.fat_from}–${frm.doc.fat_to})`,
+										indicator: 'green'
+									}, 5);
+								});
 							}
 						});
 
