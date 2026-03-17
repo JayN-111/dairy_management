@@ -55,13 +55,16 @@ def make_purchase_receipt(source_name, target_doc=None):
 		}
 	}, target_doc, set_missing_values)
 
+	stock_uom = frappe.db.get_value('Item', get_milk_item(source_name), 'stock_uom')
+
 	# Manually add item row since Milk Collection is not a child-table based doc
 	item_row = doc.append('items', {})
 	item_row.item_code    = get_milk_item(source_name)  # fetch item code
 	item_row.item_name    = frappe.db.get_value('Milk Collection', source_name, 'milk_type') + ' Milk'
 	item_row.qty          = frappe.db.get_value('Milk Collection', source_name, 'quantity')
 	item_row.rate         = frappe.db.get_value('Milk Collection', source_name, 'rate')
-	# item_row.uom          = frappe.db.get_value('Item', get_milk_item(source_name), 'stock_uom')
+	item_row.uom          = stock_uom
+	item_row.stock_uom    = stock_uom
 	item_row.warehouse    = frappe.db.get_single_value('Stock Settings', 'default_warehouse')
 
 	return doc
@@ -90,9 +93,10 @@ def make_purchase_invoice(source_name, target_doc=None):
 	item_row = doc.append('items', {})
 	item_row.item_code    = item_code
 	item_row.item_name    = source.milk_type + ' Milk'
-	item_row.qty          = qty
+	item_row.qty          = source.quantity
 	item_row.rate         = source.rate
-	item_row.uom          = uom
+	item_row.uom          = stock_uom
+	item_row.stock_uom    = stock_uom
 	item_row.warehouse    = frappe.db.get_single_value('Stock Settings', 'default_warehouse')
 
 	# Mark as non-stock purchase invoice if no warehouse setup
