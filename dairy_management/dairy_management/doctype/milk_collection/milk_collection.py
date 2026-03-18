@@ -14,7 +14,7 @@ class MilkCollection(Document):
 			'name1': self.name1,
 			'date': self.date,
 			'shift': self.shift,
-			'name': ('!=', self.name1)
+			'name': ['!=', self.name]
 		})
 		if existing:
 			frappe.throw(f"Collection already exists for {self.name1} on {self.date} - {self.shift}")
