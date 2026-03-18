@@ -13,7 +13,7 @@
   "milk_type",
   "quantity_ltr",
   "test_results_section_break_section",
-  "fat_",
+  "fat",
   "water_",
   "column_break_column",
   "grade",
@@ -65,12 +65,6 @@
    "fieldname": "test_results_section_break_section",
    "fieldtype": "Section Break",
    "label": "Test Results Section"
-  },
-  {
-   "description": "Basically, Fat lies in between cow(3-5%), Buffalo(5-8%)",
-   "fieldname": "fat_",
-   "fieldtype": "Float",
-   "label": "Fat %"
   },
   {
    "fieldname": "water_",
@@ -139,13 +133,19 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "description": "Basically, Fat lies in between cow(3-5%), Buffalo(5-8%)",
+   "fieldname": "fat",
+   "fieldtype": "Float",
+   "label": "Fat %"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-18 11:49:10.900391",
+ "modified": "2026-03-18 14:37:07.949016",
  "modified_by": "Administrator",
  "module": "Dairy Management",
  "name": "Milk Test Sample",
@@ -163,6 +163,31 @@
    "role": "System Manager",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Dairy Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Lab Technician",
+   "share": 1,
    "write": 1
   }
  ],

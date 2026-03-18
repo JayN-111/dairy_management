@@ -137,21 +137,21 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-doc_events = {
-	# "*": {
-	# 	"on_update": "method",
-	# 	"on_cancel": "method",
-	# 	"on_trash": "method"
-	# }
-    "Milk Test Sample": {
-        "validate": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.validate",
-        "on_submit": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.on_submit",
-        "on_update_after_submit": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.on_update_after_submit",
-        "after_workflow_action": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.after_workflow_action",
-        "notify_approvers": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.notify_approvers",
-        "notify_submitter": "dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.notify_submitter",
-    }
-}
+# doc_events = {
+# 	# "*": {
+# 	# 	"on_update": "method",
+# 	# 	"on_cancel": "method",
+# 	# 	"on_trash": "method"
+# 	# }
+#     "Milk Test Sample": {
+#         "validate": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.validate",
+#         # "on_submit": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.on_submit",
+#         # "on_update_after_submit": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.on_update_after_submit",
+#         # "after_workflow_action": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.after_workflow_action",
+#         # "notify_approvers": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.notify_approvers",
+#         # "notify_submitter": "dairy_management.dairy_management.doctype.milk_test_sample.milk_test_sample.MilkTestSample.notify_submitter",
+#     }
+# }
 
 # Scheduled Tasks
 # ---------------
