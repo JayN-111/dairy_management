@@ -1,0 +1,31 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.workflow_state == \"Sent for Approval\"",
+ "creation": "2026-03-18 17:49:41.094429",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Milk Test Sample",
+ "enabled": 1,
+ "event": "Custom",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Dear Dairy Manager,</p>\n<p>A milk test sample requires your approval.</p>\n<table border=\"1\" cellpadding=\"8\"\nstyle=\"border-collapse:collapse; font-size:13px; width:100%\">\n    <tr style=\"background:#f5f5f5\">\n        <td><b>Sample ID</b></td>\n        <td>{{ doc.name }}</td>\n    </tr>\n    <tr>\n        <td><b>Member</b></td>\n        <td>{{ doc.member }}</td>\n    </tr>\n    <tr style=\"background:#f5f5f5\">\n        <td><b>Collection Date</b></td>\n        <td>{{ doc.collection_date }}</td>\n    </tr>\n    <tr>\n        <td><b>Milk Type</b></td>\n        <td>{{ doc.milk_type }}</td>\n    </tr>\n    <tr style=\"background:#f5f5f5\">\n        <td><b>Fat %</b></td>\n        <td>{{ doc.fat }}</td>\n    </tr>\n    <tr>\n        <td><b>Grade</b></td>\n        <td>{{ doc.grade }}</td>\n    </tr>\n</table>\n<br>\n<a href=\"/app/milk-test-sample/{{ doc.name }}\"\nstyle=\"padding:8px 16px; background:#4CAF50;\ncolor:white; text-decoration:none; border-radius:4px;\">\n    Review & Approve\n</a>",
+ "message_type": "HTML",
+ "modified": "2026-03-19 11:44:25.710152",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Milk Test Sample - Send For Approval",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Dairy Manager"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Jay Nasit",
+ "sender_email": "jaynasit111@gmail.com",
+ "subject": "[Action Required] Milk Test Sample Approval \u2014 {{ doc.name }}"
+}

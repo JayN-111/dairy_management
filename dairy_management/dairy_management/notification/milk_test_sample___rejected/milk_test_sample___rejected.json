@@ -1,0 +1,32 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.workflow_state == \"Rejected\"",
+ "creation": "2026-03-18 17:52:32.189756",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Milk Test Sample",
+ "enabled": 1,
+ "event": "Custom",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Your milk test sample has been\n<b style=\"color:#e74c3c\">Rejected</b>.</p>\n<table border=\"1\" cellpadding=\"8\"\nstyle=\"border-collapse:collapse; font-size:13px; width:100%\">\n    <tr style=\"background:#f5f5f5\">\n        <td><b>Sample ID</b></td>\n        <td>{{ doc.name }}</td>\n    </tr>\n    <tr>\n        <td><b>Member</b></td>\n        <td>{{ doc.member }}</td>\n    </tr>\n    <tr style=\"background:#f5f5f5\">\n        <td><b>Grade</b></td>\n        <td>{{ doc.grade }}</td>\n    </tr>\n    <tr>\n        <td><b>Rejection Reason</b></td>\n        <td>{{ doc.rejection_reason or \"\u2014\" }}</td>\n    </tr>\n</table>\n<br>\n<a href=\"/app/milk-test-sample/{{ doc.name }}\"\nstyle=\"padding:8px 16px; background:#2196F3;\ncolor:white; text-decoration:none; border-radius:4px;\">\n    View Sample\n</a>",
+ "message_type": "HTML",
+ "modified": "2026-03-19 11:45:12.300266",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Milk Test Sample - Rejected",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "owner",
+   "receiver_by_role": "Lab Technician"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Jay Nasit",
+ "sender_email": "jaynasit111@gmail.com",
+ "subject": "Milk Test Sample Rejected \u2014 {{ doc.name }}"
+}
