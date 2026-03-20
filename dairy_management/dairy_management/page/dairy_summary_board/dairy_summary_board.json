@@ -1,0 +1,19 @@
+{
+ "content": null,
+ "creation": "2026-03-20 10:30:02.822355",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-03-20 10:30:02.822355",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "dairy-summary-board",
+ "owner": "Administrator",
+ "page_name": "dairy-summary-board",
+ "roles": [],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Dairy Summary Board"
+}
