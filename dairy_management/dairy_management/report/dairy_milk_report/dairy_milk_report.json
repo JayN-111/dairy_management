@@ -1,0 +1,93 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-03-20 14:57:49.275598",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "report_type",
+   "fieldtype": "Select",
+   "label": "Report Type",
+   "mandatory": 0,
+   "options": "\nBuy History\nSale History \nSummary",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "label": "Supplier",
+   "mandatory": 0,
+   "options": "Supplier",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "mandatory": 0,
+   "options": "Customer",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "milk_type",
+   "fieldtype": "Select",
+   "label": "Milk Type",
+   "mandatory": 0,
+   "options": "\nCow\nBuffalo",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "Shift",
+   "mandatory": 0,
+   "options": "\nMorning\nEvening",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "Sig Letter Head",
+ "letterhead": null,
+ "modified": "2026-03-20 14:57:49.275598",
+ "modified_by": "Administrator",
+ "module": "Dairy Management",
+ "name": "Dairy Milk Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Milk Collection",
+ "report_name": "Dairy Milk Report",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "Stock Manager"
+  },
+  {
+   "role": "Stock User"
+  },
+  {
+   "role": "Purchase User"
+  },
+  {
+   "role": "Accounts User"
+  }
+ ],
+ "timeout": 0
+}

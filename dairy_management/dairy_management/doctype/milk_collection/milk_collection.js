@@ -6,8 +6,6 @@ frappe.ui.form.on('Milk Collection', {
 	refresh(frm) {
 		if (frm.doc.docstatus === 1) {
 
-			// ── Always show both buttons ──
-
 			frm.add_custom_button(__('Delivery Note'), () => {
 				frappe.model.open_mapped_doc({
 					method: 'dairy_management.dairy_management.doctype.milk_collection.milk_collection.make_delivery_note',
