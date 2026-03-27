@@ -10,9 +10,9 @@ frappe.pages['dairy-summary-board'].on_page_load = function(wrapper) {
 	);
 
 	// Set default dates — today
-	let today = frappe.datetime.get_today();
-	$('#from_date').val(today);
-	$('#to_date').val(today);
+	// let today = frappe.datetime.get_today();
+	// $('#from_date').val(today);
+	// $('#to_date').val(today);
 
 	load_summary();
 };
